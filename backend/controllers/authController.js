@@ -110,7 +110,16 @@ const loginUser = async (req, res) => {
   }
 };
 
+const getCurrentUser = async (req, res) => {
+  res.json({
+    success: true,
+    message: "Authenticated user",
+    user: req.user,
+  });
+};
+
 module.exports = {
   registerUser,
   loginUser,
+  getCurrentUser,
 };
